@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<sdf version="1.9">
+
+  <model name="habitat_demonstration_unit">
+    <static>True</static>
+      <link name='hdu_1'>
+        <inertial> <!--inertial properties of the link mass, inertia matix-->
+          <mass>100.0</mass>
+          <inertia>
+            <ixx>0.095329</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.381317</iyy>
+            <iyz>0</iyz>
+            <izz>0.476646</izz>
+          </inertia>
+        </inertial>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://habitat_demonstration_unit/meshes/habitat_demonstration_unit_part_1.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>model://habitat_demonstration_unit_part_1/meshes/habitat_demonstration_unit_part_1.dae</uri>
+            </mesh>
+          </geometry>        
+        </collision>
+      </link>
+    </model>
+</sdf>
