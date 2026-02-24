@@ -30,14 +30,14 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://space_resources/models/habitat_demonstration_unit/meshes/habitat_demonstration_unit_part_1.dae" scale="1 1 1"/>
+        <mesh filename="file://$(find space_resources)/models/habitat_demonstration_unit/meshes/habitat_demonstration_unit_part_1.dae" scale="1 1 1"/>
       </geometry>
     </visual>
 
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://space_resources/models/habitat_demonstration_unit/meshes/habitat_demonstration_unit_part_1.dae" scale="1 1 1"/>
+        <mesh filename="file://$(find space_resources)/models/habitat_demonstration_unit/meshes/habitat_demonstration_unit_part_1.dae" scale="1 1 1"/>
       </geometry>
     </collision>
 

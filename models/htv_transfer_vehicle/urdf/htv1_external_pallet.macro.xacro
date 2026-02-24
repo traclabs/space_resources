@@ -14,14 +14,14 @@
      <visual>
        <origin xyz="0 0 0" rpy="0 0 0" />
        <geometry>
-         <mesh filename="package://space_resources/models/htv_transfer_vehicle/meshes/htv_ep1a_1_100_v01_textured.dae" scale="1 1 1"/>
+         <mesh filename="file://$(find space_resources)/models/htv_transfer_vehicle/meshes/htv_ep1a_1_100_v01_textured.dae" scale="1 1 1"/>
        </geometry>
      </visual>
 
      <collision>
        <origin xyz="0 0 0" rpy="0 0 0"/>
        <geometry>
-         <mesh filename="package://space_resources/models/htv_transfer_vehicle/meshes/htv_ep1a_1_100_v01_textured.dae" scale="1 1 1"/>
+         <mesh filename="file://$(find space_resources)/models/htv_transfer_vehicle/meshes/htv_ep1a_1_100_v01_textured.dae" scale="1 1 1"/>
        </geometry>
      </collision>
     </link>

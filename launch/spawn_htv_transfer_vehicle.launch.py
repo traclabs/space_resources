@@ -100,5 +100,5 @@ def generate_launch_description():
   return LaunchDescription( launch_args + [
     htv_rsp,
     spawn_htv_urdf,
-    spawn_htv_sdf    
+    #spawn_htv_sdf    
   ])
