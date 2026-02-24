@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<robot name="habitat_demonstration_unit" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+
+  <xacro:arg name="x" default="0.0"/>
+  <xacro:arg name="y" default="0.0"/>
+  <xacro:arg name="z" default="0.0"/>
+  <xacro:arg name="roll" default="0.0"/>
+  <xacro:arg name="pitch" default="0.0"/>
+  <xacro:arg name="yaw" default="0.0"/>
+  <xacro:arg name="parent" default="world"/>
+
+  <link name="$(arg parent)"/>
+  
+  <joint name="joint_hdu_world" type="fixed">
+    <origin xyz="$(arg x) $(arg y) $(arg z)" rpy="$(arg roll) $(arg pitch) $(arg yaw)"/>
+    <parent link="$(arg parent)"/>
+    <child link="hdu_part_1"/>
+  </joint> 
+  
+  <!-- HDU Body -->
+  <link name="hdu_part_1">
+
+    <inertial>
+      <origin xyz="0 0 0.0" rpy="0 0 0"/>
+      <mass value="1"/>
+      <inertia ixx="100"  ixy="0"  ixz="0" iyy="100" iyz="0" izz="100" />
+    </inertial>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="file://$(find space_resources)/models/habitat_demonstration_unit/meshes/habitat_demonstration_unit_part_1.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file://$(find space_resources)/models/habitat_demonstration_unit/meshes/habitat_demonstration_unit_part_1.dae" scale="1 1 1"/>
+      </geometry>
+    </collision>
+
+  </link>
+
+  
+</robot>

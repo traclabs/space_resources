@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<robot name="htv1_external_pallet_macro" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- HTV1 External Pallet (EP) -->
+  <xacro:macro name="htv1_external_pallet_macro" params=" parent:='htv1_body' *origin">
+
+    <link name="htv1_external_pallet">
+     <inertial>
+       <origin xyz="0 0 0.0" rpy="0 0 0"/>
+       <mass value="1"/>
+       <inertia ixx="100"  ixy="0"  ixz="0" iyy="100" iyz="0" izz="100" />
+     </inertial>
+
+     <visual>
+       <origin xyz="0 0 0" rpy="0 0 0" />
+       <geometry>
+         <mesh filename="file://$(find space_resources)/models/htv_transfer_vehicle/meshes/htv_ep1a_1_100_v01_textured.dae" scale="1 1 1"/>
+       </geometry>
+     </visual>
+
+     <collision>
+       <origin xyz="0 0 0" rpy="0 0 0"/>
+       <geometry>
+         <mesh filename="file://$(find space_resources)/models/htv_transfer_vehicle/meshes/htv_ep1a_1_100_v01_textured.dae" scale="1 1 1"/>
+       </geometry>
+     </collision>
+    </link>
+          
+    <joint name="joint_htv_pallet" type="fixed">
+      <xacro:insert_block name="origin"/>
+      <parent link="${parent}"/>
+      <child link="htv1_external_pallet"/>
+    </joint>          
+          
+  </xacro:macro> 
+ 
+</robot>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>space_resources</name>
+  <version>1.0.0</version>
+  <description>The space_resources package</description>
+  <maintainer email="robotics@traclabs.com">TRACLabs Robotics</maintainer>
+  <license>TODO</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_cmake_python</buildtool_depend>
+
+  <depend>ament_index_cpp</depend>
+  <depend>rclcpp</depend>
+  <depend>rclpy</depend>
+  <depend>geometry_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>std_srvs</depend>
+  <depend>rviz_rendering</depend>
+
+  <exec_depend>joint_state_publisher_gui</exec_depend>
+  <exec_depend>ros_gz_sim</exec_depend>
+  <exec_depend>ros_gz_image</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

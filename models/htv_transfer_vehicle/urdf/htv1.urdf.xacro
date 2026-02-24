@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<robot name="htv1" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find space_resources)/models/htv_transfer_vehicle/urdf/htv1_module.macro.xacro"/>
+  <xacro:include filename="$(find space_resources)/models/htv_transfer_vehicle/urdf/htv1_external_pallet.macro.xacro"/>  
+
+  <xacro:arg name="x" default="0.0"/>
+  <xacro:arg name="y" default="0.0"/>
+  <xacro:arg name="z" default="0.0"/>
+  <xacro:arg name="roll" default="0.0"/>
+  <xacro:arg name="pitch" default="0.0"/>
+  <xacro:arg name="yaw" default="0.0"/>
+  <xacro:arg name="parent" default="world"/>
+
+  <link name="$(arg parent)"/>
+  
+  <joint name="joint_htv_world" type="fixed">
+    <origin xyz="$(arg x) $(arg y) $(arg z)" rpy="$(arg roll) $(arg pitch) $(arg yaw)"/>
+    <parent link="$(arg parent)"/>
+    <child link="htv1_body"/>
+  </joint> 
+  
+
+  <xacro:htv1_module_macro />
+  
+  <xacro:htv1_external_pallet_macro parent="htv1_body">
+    <origin xyz="0.2419 -2.0639 3.1497" rpy="0 0 0" />
+  </xacro:htv1_external_pallet_macro>
+  
+</robot>
