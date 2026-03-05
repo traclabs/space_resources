@@ -1,9 +1,9 @@
 <?xml version="1.0" ?>
 <sdf version="1.9">
 
-  <model name="habitat_demonstration_unit">
+  <model name="htv1_external_pallet">
     <static>True</static>
-      <link name='hdu_1'>
+      <link name='base_link'>
         <inertial> <!--inertial properties of the link mass, inertia matix-->
           <mass>100.0</mass>
           <inertia>
@@ -19,7 +19,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>model://habitat_demonstration_unit/meshes/habitat_demonstration_unit_part_1.dae</uri>
+              <uri>model://htv_transfer_vehicle/meshes/htv_ep1a_1_100_v01_textured.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -27,9 +27,9 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>model://habitat_demonstration_unit_part_1/meshes/habitat_demonstration_unit_part_1.dae</uri>
+              <uri>model://htv_transfer_vehicle/meshes/htv_ep1a_1_100_v01_textured.dae</uri>
             </mesh>
-          </geometry>        
+          </geometry>
         </collision>
       </link>
     </model>
