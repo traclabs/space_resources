@@ -12,6 +12,7 @@ import xacro
 
 def evaluate_rsp(context, *args, **kwargs):
 
+  urdf_path = LaunchConfiguration("urdf_file").perform(context) 
   x = LaunchConfiguration("x").perform(context)
   y = LaunchConfiguration("y").perform(context)
   z = LaunchConfiguration("z").perform(context)
@@ -20,8 +21,6 @@ def evaluate_rsp(context, *args, **kwargs):
   yaw = LaunchConfiguration("yaw").perform(context)
     
 
-  hdu_urdf_path = os.path.join(get_package_share_directory("space_resources"), "models", 
-                  "habitat_demonstration_unit", "urdf", "habitat_demonstration_unit.urdf.xacro")
   hdu_mappings = {
       'x' : x,
       'y' : y,
@@ -30,7 +29,7 @@ def evaluate_rsp(context, *args, **kwargs):
       'P' : pitch,
       'Y' : yaw,                        
   }
-  hdu_doc = xacro.process_file(hdu_urdf_path, mappings=hdu_mappings)
+  hdu_doc = xacro.process_file(urdf_path, mappings=hdu_mappings)
   hdu_urdf_content = hdu_doc.toprettyxml(indent="  ")
       
   hdu_robot_state_publisher = Node(
@@ -51,7 +50,11 @@ def evaluate_rsp(context, *args, **kwargs):
 
 def generate_launch_description():
 
+  hdu_urdf_path = os.path.join(get_package_share_directory("space_resources"), "models", 
+                  "habitat_demonstration_unit", "urdf", "habitat_demonstration_unit.urdf.xacro")
+
   launch_args = [
+    DeclareLaunchArgument(name="urdf_file", default_value=hdu_urdf_path),
     DeclareLaunchArgument(name="spawn_urdf", default_value="True"),
     DeclareLaunchArgument(name="x", default_value="0.0"),
     DeclareLaunchArgument(name="y", default_value="0.0"),
