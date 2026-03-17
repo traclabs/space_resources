@@ -11,13 +11,13 @@
   <xacro:arg name="parent" default="world"/>
 
   <link name="$(arg parent)"/>
-  
+
   <joint name="joint_hdu_world" type="fixed">
     <origin xyz="$(arg x) $(arg y) $(arg z)" rpy="$(arg roll) $(arg pitch) $(arg yaw)"/>
     <parent link="$(arg parent)"/>
     <child link="hdu_part_1"/>
-  </joint> 
-  
+  </joint>
+
   <!-- HDU Body -->
   <link name="hdu_part_1">
 
@@ -30,18 +30,18 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="file://$(find space_resources)/models/habitat_demonstration_unit/meshes/habitat_demonstration_unit_part_1_open_top.dae" scale="1 1 1"/>
+        <mesh filename="file://$(find space_resources)/models/habitat_demonstration_unit/meshes/habitat_demonstration_unit_part_1_open_top_solidified.dae" scale="1 1 1"/>
       </geometry>
     </visual>
 
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file://$(find space_resources)/models/habitat_demonstration_unit/meshes/habitat_demonstration_unit_part_1_open_top.dae" scale="1 1 1"/>
+        <mesh filename="file://$(find space_resources)/models/habitat_demonstration_unit/meshes/habitat_demonstration_unit_part_1_open_top_solidified.dae" scale="1 1 1"/>
       </geometry>
     </collision>
 
   </link>
 
-  
+
 </robot>

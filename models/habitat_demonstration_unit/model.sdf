@@ -19,7 +19,7 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>model://habitat_demonstration_unit/meshes/habitat_demonstration_unit_part_1.dae</uri>
+              <uri>/builder/src/space_resources/models/habitat_demonstration_unit/meshes/habitat_demonstration_unit_part_1_open_top_solidified.dae</uri>
             </mesh>
           </geometry>
         </visual>
@@ -27,9 +27,9 @@
           <geometry>
             <mesh>
               <scale>1 1 1</scale>
-              <uri>model://habitat_demonstration_unit_part_1/meshes/habitat_demonstration_unit_part_1.dae</uri>
+              <uri>/builder/src/space_resources/models/habitat_demonstration_unit/meshes/habitat_demonstration_unit_part_1_open_top_solidified.dae</uri>
             </mesh>
-          </geometry>        
+          </geometry>
         </collision>
       </link>
     </model>
