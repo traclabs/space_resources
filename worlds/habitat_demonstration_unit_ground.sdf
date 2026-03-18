@@ -3,7 +3,7 @@
   <world name="default">
 
     <scene>
-      <ambient>0.4 0.4 0.4 1</ambient>
+      <ambient>0.3 0.3 0.3 1</ambient>
       <background>0 0 0 1</background>
       <shadows>true</shadows>
       <grid>True</grid>
@@ -25,6 +25,10 @@
 
       </link>
     </model>
+    
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
 
     <gui fullscreen="0">
 
@@ -67,7 +71,7 @@
 
      <!-- *********************************** -->
      <!-- ADDED FOR MOVING THINGS AROUND -->
-           <plugin name='Entity context menu' filename='EntityContextMenuPlugin'>
+     <!--<plugin name='Entity context menu' filename='EntityContextMenuPlugin'>
         <gz-gui>
           <property key='state' type='string'>floating</property>
           <property key='width' type='double'>5</property>
@@ -93,7 +97,7 @@
           <property key='showTitleBar' type='bool'>false</property>
         </gz-gui>
       </plugin>--> <!-- Already added -->
-      <plugin name='Camera Tracking' filename='CameraTracking'>
+      <!--<plugin name='Camera Tracking' filename='CameraTracking'>
         <gz-gui>
           <property key='resizable' type='bool'>false</property>
           <property key='width' type='double'>5</property>
@@ -261,7 +265,7 @@
           <property key='state' type='string'>floating</property>
           <property key='showTitleBar' type='bool'>false</property>
         </gz-gui>
-      </plugin>
+      </plugin>-->
      <!-- ************************************** -->
 
 
